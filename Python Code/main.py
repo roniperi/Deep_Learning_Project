@@ -14,6 +14,7 @@ window.title("Roni Project")
 def start_menu():
     # input: none
     # output: window with buttons
+    # הפעולה מייצרת חלון עם כפתורים כדי שהמתמש יוכל לשלוט במה שירצה לעשות
     top_frame = tkinter.Frame(window).pack()
     bottom_frame = tkinter.Frame(window).pack(side="bottom")
     window.geometry('400x400')  # window size
@@ -32,12 +33,18 @@ def start_menu():
 
 
 def input_for_test_image(model):
+    # input:  the model
+    # output: none
+    # הפעולה מקבלת קלט עבור בדיקה של תמונה ספציפית
     full_path = input("Please enter the image path: ")
     label = input("please enter the name of the flower:")
     test_one_picture(model, full_path, label)
 
 
 def show_initial_info():
+    # input: none
+    # output: print the numbers of image and the type
+    # הפעולה מדפיסה את המידע הראשוני
     count = 0
     for clas in classes:
         count += len(os.listdir(train_path + "/" + clas))
